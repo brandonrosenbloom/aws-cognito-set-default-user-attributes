@@ -4,10 +4,12 @@ The script assumes that the attributes have already been added to the user pool 
 """
 import boto3
 
-aws_access_key_id = 'AKIAJCNBKAGSXIPGOBAA'
-aws_secret_access_key = '+qpO3gUgrsBI1JIGFUd0Jg3uBkLWfKzSjuJIncRO'
+#Set your credentials here:
+aws_access_key_id = ''
+aws_secret_access_key = ''
 
-user_pool_id = 'us-west-2_ZsXhOYG4y'  # Use this variable to identity the user_pool_id
+aws_region = ''
+user_pool_id = ''  # Use this variable to identity the user_pool_id
 user_list_limit = 1  # Use this variable to identify the limit of users returned from AWS. Maximum limit is 60 per AWS
 pagination_token = None
 done = False
@@ -27,7 +29,7 @@ attrs = [
     ]
 
 client = boto3.client('cognito-idp',
-                      'us-west-2',
+                      aws_region,
                       aws_access_key_id=aws_access_key_id,
                       aws_secret_access_key=aws_secret_access_key
                       )
